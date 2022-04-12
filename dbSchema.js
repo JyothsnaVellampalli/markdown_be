@@ -1,8 +1,10 @@
 const mongodb = require('mongodb');
+const dotenv = require('dotenv');
+require('dotenv').config();
 const MongoClient = mongodb.MongoClient;
-const dbName = process.env.dbName;
-const username = process.env.username;
-const password = process.env.password;
-const dburl = `mongodb+srv://${username}:${password}@cluster0.b0dyt.mongodb.net/test/${dbName}`
+const dbName = process.env.MONGO_DB;
+// const username = process.env.username;
+// const password = process.env.password;
+const dburl = process.env.MONGO_URL
 module.exports = {MongoClient,dburl,mongodb}
 
